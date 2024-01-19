@@ -9,8 +9,8 @@ image: ./images/main.png
 ---
 
 
-You can explore the Opioid Epidemic ShinyApp [here](http://127.0.0.1:3454/).
-You can explore the source code [here](./code/app copy.R).
+You can explore the Opioid Epidemic ShinyApp [here](http://127.0.0.1:3454/)
+You can explore the source code [here](./code/app copy.R)
 
 <br>
 
