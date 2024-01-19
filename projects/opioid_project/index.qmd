@@ -9,14 +9,14 @@ image: ./images/main.png
 ---
 
 
-You can explore the Opioid Epidemic ShinyApp [here](http://127.0.0.1:3454/)
+You can explore the Opioid Epidemic ShinyApp (link will be added).
 You can explore the source code [here](./code/app copy.R)
 
 <br>
 
 ## Introduction
 
-In this project, my groupmates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns.
+In this project, my group mates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns.
 
 ## Objectives
 

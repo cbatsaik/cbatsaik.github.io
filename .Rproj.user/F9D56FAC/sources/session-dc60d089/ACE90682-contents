@@ -1,0 +1,566 @@
+---
+title: "Statistical Machine Learning Final Project"
+author: "Charles Batsaikhan"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, warning = FALSE, message = FALSE, tidy = TRUE)
+```
+
+```{r}
+# Load data and required packages
+library(ISLR)
+library(dplyr)
+library(broom)
+library(ggplot2)
+library(tidymodels) 
+tidymodels_prefer()
+library(readr)
+library(caret)
+library(stringr)
+library(e1071)
+library(probably)
+library(rpart.plot)
+openpowerlifting <- read_csv("~/Documents/STAT 253/HW2/openpowerlifting.csv")
+```
+
+I decided to look into the open openpowerlifting database updated 4 years ago from Kaggle website. As we can see, the database is only from the results from the powerlifting competitions, therefore it does not represent the population as a whole. This database has 1,423,354 cases, each representing up to 37 different variables. Example of this results would be whether the case is male/female, age, body weight, division, equipment used...etc Because the database is too large to work with, I decided to narrow the datas down only to results from US competitions. There are a total of 37 variables in this dataset. There are many different interesting variables in the dataset and all represent different factors to how much weight lifted(kg) by each person. The main goal was to look at how these different variables affect the weight lifted by a person-whether they have a positive or negative relationship.
+
+2 research questions: 1) Regression Setting- Can we use machine learning algorithms to predict the weight lifted by a powerlifter in US competitions based on their gender, age, body weight, and other variables? 2) Classification Setting- How accurately can we predict whether a powerlifter used equipment while competing based on body weight and age.
+
+```{r}
+# Any code to clean the data
+# Cleaning
+
+openpowerlifting1_noNA = openpowerlifting %>%
+  filter(MeetCountry == 'USA')%>%
+  select(TotalKg, Sex, Equipment, Age, BodyweightKg, Glossbrenner,Place ) %>%
+  drop_na()%>%
+  mutate(
+    Male = ifelse(Sex == 'M', 1, 0),
+    Female = ifelse(Sex == 'F', 1, 0)
+  ) %>%
+
+  mutate(equipment_bin = ifelse(Equipment=="Raw", "Raw", "Not Raw"))
+```
+
+## Initial investigation 1: ignoring nonlinearity (for now)
+
+Use ordinary least squares (OLS) regression and LASSO to build initial models for your quantitative outcome as a function of the predictors of interest. (As part of data cleaning, exclude any variables that you don't want to consider as predictors.)
+
+```{r}
+# Your code
+#OLS regression model
+set.seed(2023) # can change to your favorite number if you wish!
+lm_spec <-
+linear_reg() %>%
+set_engine(engine = 'lm') %>%
+set_mode('regression')
+
+full_rec <- recipe(TotalKg ~ Sex+Equipment+Age+BodyweightKg, data = openpowerlifting1_noNA) %>%
+step_nzv(all_predictors()) %>% # removes variables with the same value
+step_normalize(all_numeric_predictors()) %>% # important standardization step for LASSO
+step_dummy(all_nominal_predictors()) # creates indicator variables for categorical variables
+full_lm_wf <- workflow() %>%
+add_recipe(full_rec) %>%
+add_model(lm_spec)
+OLS_model <- fit(full_lm_wf, data = openpowerlifting1_noNA)
+OLS_model %>% tidy()
+```
+
+```{r}
+# Calculate evaluation metrics
+reg_metrics = metric_set(rmse, mae, rsq)
+OLS_model %>%
+predict(new_data = openpowerlifting1_noNA) %>%
+reg_metrics(truth = openpowerlifting1_noNA$TotalKg, estimate = .pred)
+
+```
+
+```{r}
+# Get predicted values and residuals
+OLS <- lm(TotalKg ~ Sex+Equipment+Age+BodyweightKg, data = openpowerlifting1_noNA)
+
+# Fitted vs. Residual plot
+OLS %>%
+  augment() %>%
+  ggplot(aes(x = .fitted, y = .resid)) +
+  geom_point(alpha=.25) +
+  geom_smooth() +
+  theme_minimal()+
+  ggtitle("Scatterplot of fitted vs residual dots")
+
+```
+
+OLS model: Note: the female variables was dropped due to high correlation of men. - From the summary of the model, we can see that the intercept is 392, which means that when all the predictor variables are zero, we can expect TotalKg to be around 392 kg. The coefficient of Male is 139, which indicates that, on average, males can lift about 139 kg more than females. The coefficient of Age is -48, which means that for every one year increase in age, we can expect TotalKg to decrease by 48 kg. The coefficient of BodyweightKg is 55, which suggests that, on average, for every one unit increase in Bodyweight in kg, we can expect TotalKg to increase by 55 kg. The coefficients for Equipment_Raw (-94.4), Equipment_Single.ply (-85.1), and Equipment_Wraps (31.9) show the effect of the different types of equipment used in the competition on the TotalKg score.
+
+PLOT: Relationship is not perfectly linear and there are some nonlinearity.
+
+EVALUATION METRICS: - RMSE of 151.46 means that, on average, the model's predictions of the weight lifted by a powerlifter in US competitions deviate from the actual values by approximately 151.46 kg. This indicates that there is still a relatively high level of error in the model's predictions - MAE of 118 indicates that, on average, the model's predictions of the weight lifted by a powerlifter deviate from the actual values by approximately 118 kg. This means that the model's predictions are closer to the actual values, on average, than the RMSE suggests. - R-squared of 0.33 means that approximately 33% of the total variance in the weight lifted by a powerlifter can be explained by the independent variables in the model, including gender, age, and body weight.
+
+SUMMARIZE: - This model because shows moderate levels of effective power. As you can see, the important variables are Age, Body weight, Sex(M), Equipment Raw, Equipment Single, and Equipment Wraps. Because all these variables has p value less than 0.05.
+
+LASSO:
+
+```{r}
+# Fit LASSO models for a grid of lambda values
+# Tune and fit a LASSO model to the data (with CV)
+set.seed(2023)
+# Create CV folds
+data_cv10 <- vfold_cv(openpowerlifting1_noNA, v = 10)
+# Lasso Model Spec with tune
+lm_lasso_spec_tune <-linear_reg() %>%
+set_args(mixture = 1, penalty = tune()) %>% 
+set_engine(engine = 'glmnet') %>% 
+set_mode('regression')
+# Workflow (Recipe + Model)
+lasso_wf_tune <- workflow() %>%
+add_recipe(full_rec) %>% # recipe defined above
+add_model(lm_lasso_spec_tune)
+# Tune Model (trying a variety of values of Lambda penalty)
+penalty_grid <- grid_regular(
+  penalty(range = c(-3, 0)),  #log10 transformed (e.g., put '-3' for 0.001)
+  levels = 30)
+
+tune_output <- tune_grid( # new function for tuning parameters
+lasso_wf_tune, # workflow
+resamples = data_cv10, # cv folds
+metrics = metric_set(mae),
+grid = penalty_grid # penalty grid defined above
+)
+
+```
+
+```{r}
+best_penalty <- select_best(tune_output, metric = 'mae', 'rmse')#choose penalty value based on lowest CV
+best_penalty
+
+ best_se_penalty <- select_by_one_std_err(tune_output, metric = 'mae','rmse', desc(penalty)) # choose largest pbest_se_penalty
+
+best_se_penalty
+```
+
+```{r}
+autoplot(tune_output)+theme_classic()
+```
+
+The reason the error goes down then start going ack up is that if you pick a lambda that is either too small or too large, your testing error will be higher than ideal. If you pick a lambda that is too small, you may pick a model with too many predictors. If you pick a lambda that is too large, you may pick a model with too few predictors.
+
+```{r}
+# Fit Final Model
+final_wf <- finalize_workflow(lasso_wf_tune, best_penalty) # incorporates penalty value to workflow
+final_wf_se <- finalize_workflow(lasso_wf_tune, best_se_penalty) # incorporates penalty value to workflow
+final_fit <- fit(final_wf, data = openpowerlifting1_noNA)
+final_fit_se <- fit(final_wf_se, data = openpowerlifting1_noNA)
+tidy(final_fit)
+# Obtain the predictors and coefficients of the "best" model
+# Filter out the coefficient are 0
+final_fit_se %>% tidy() %>% filter(estimate != 0)
+```
+
+-   The result of the LASSO model shows the coefficients of the predictors with non-zero values in the final model.
+
+-   MAE of 131.44 indicates that, on average, the model's predictions of the weight lifted by a powerlifter deviate from the actual values by approximately 131.44 kg.
+
+-   The intercept term has an estimate of 381.65, which represents the average value of the response variable when all predictors are equal to zero.
+
+-   Age: -46.27: Means a increase in age will decrease total kg lifted by 46kg.
+
+-   BodyweightKg: 54.55
+
+-   Sex_M: 138.74
+
+-   Equipment_Raw: -82.36
+
+-   Equipment_Single.ply: -71.85
+
+-   Equipment_Wraps: 40.88
+
+-   We can see that LASSO has shrunk equipment straps to 0, indicating that may not be important.
+
+## Investigation 2: Accounting for nonlinearity
+
+Update your LASSO model to use natural splines for the quantitative predictors. It's recommended to use few knots (e.g., 2 knots = 3 degrees of freedom).
+
+SPLINES:
+
+```{r}
+# Your code
+set.seed(2023)
+data_cv8 <- vfold_cv(openpowerlifting1_noNA, v = 8)
+lm_spec <-
+linear_reg() %>%
+set_engine(engine = 'lm') %>%
+set_mode('regression')
+# New Recipe (remove steps needed for LASSO, add splines)
+full_rec_spline <- recipe(TotalKg ~ Sex+Equipment+Age+BodyweightKg, data = openpowerlifting1_noNA) %>%
+step_normalize(all_numeric_predictors()) %>%
+step_dummy(all_nominal_predictors()) %>%
+step_ns(BodyweightKg,Age, deg_free = 3) # natural cubic spline (higher deg_free means more knots)
+# Workflow (Recipe + Model)
+ns_wf_tune <- workflow() %>%
+add_recipe(full_rec_spline) %>%
+add_model(lm_spec)
+# CV to Evaluate
+cv_output <- fit_resamples(
+ns_wf_tune, # workflow
+resamples = data_cv8, # cv folds
+metrics = metric_set(mae)
+)
+# Collect the metrics
+cv_output %>% collect_metrics()
+
+```
+
+MAE of the splines model with a natural cubic spline for BodyweightKg and Age is 123.2133, with a standard error of 0.1742858. The model was trained and evaluated using 8-fold cross-validation.The MAE suggests, on average, the model's prediction of the weight lifted by a powerlifter deviate from the actual values by approx 123.2 kgs.
+
+Fit a GAM using LOESS terms using the set of variables deemed to be most relevant based on your investigations so far.
+
+-   How does test performance of the GAM compare to other models you explored?
+-   Do you gain any insights from the GAM output plots for each predictor?
+
+```{r}
+# Your code
+set.seed(123)
+gam_spec <-
+gen_additive_mod() %>%
+set_engine(engine = 'mgcv') %>%
+set_mode('regression')
+
+gam_mod <- fit(gam_spec, TotalKg ~ s(BodyweightKg) + s(Age)+Equipment+Sex, data = openpowerlifting1_noNA)
+
+par(mfrow=c(2,2))
+gam_mod %>% pluck('fit') %>% summary()
+```
+
+The response variable is TotalKg and the predictors include smooth terms for BodyweightKg and Age, as well as categorical variables Equipment and Sex. The parametric coefficients estimate the effect of the categorical variables, while the approximate significance of smooth terms indicates the degree of nonlinearity in the relationships between TotalKg and BodyweightKg and Age. The adjusted R-squared value suggests that the model explains 40.5% of the deviance, and the GCV and scale estimate indicate the level of residual variance in the model.
+
+```{r}
+par(mfrow=c(2,2))
+gam_mod %>% pluck('fit')%>% mgcv::gam.check()
+```
+
+The QQ plot suggest that GAM fits well, since most of the residuals fall near the y=x red line. Residual vs fitted value plot looks OK-besides some equivariance concerns (as the fitted values increase, the variance seems to shrink)
+
+```{r}
+gam_mod %>%
+  pluck('fit')%>%
+  plot()
+```
+
+Several of these relationships have non-linear curvature, so it was a good idea to fit a GAM.
+
+##FINAL REGRESSION MODEL: SPLINES MODEL
+
+```{r}
+set.seed(2023)
+# Create CV folds
+data_cv8 <- vfold_cv(openpowerlifting1_noNA, v = 8)
+# Lasso Model Spec with tune
+lm_lasso_spec_tune <-
+linear_reg() %>%
+set_args(mixture = 1, penalty = tune()) %>% ## mixture = 1 indicates Lasso
+set_engine(engine = 'glmnet') %>%
+set_mode('regression')
+# Recipe
+full_rec <- recipe(TotalKg ~ Sex+Equipment+Age+BodyweightKg, data=openpowerlifting1_noNA) %>%
+step_normalize(all_numeric_predictors()) %>%
+step_dummy(all_nominal_predictors())
+
+lasso_wf_tune <- workflow() %>%
+add_recipe(full_rec) %>%
+add_model(lm_lasso_spec_tune)
+# Tune Model (trying a variety of values of Lambda penalty)
+penalty_grid <- grid_regular(
+penalty(range = c(-3, 1)), #log10 transformed
+levels = 30)
+tune_output <- tune_grid(
+lasso_wf_tune, # workflow
+resamples = data_cv8, # cv folds
+metrics = metric_set(mae),
+grid = penalty_grid # penalty grid defined above
+)
+# Select best model & fit
+best_penalty <- tune_output %>%
+select_by_one_std_err(metric = 'mae', desc(penalty))
+ls_mod <- best_penalty %>%
+finalize_workflow(lasso_wf_tune,.) %>%
+fit(data = openpowerlifting1_noNA)
+# Note which variable is the "least" important
+ls_mod %>% tidy()
+```
+
+```{r}
+ls_mod_output <- openpowerlifting1_noNA %>%
+bind_cols(predict(ls_mod, new_data = openpowerlifting1_noNA)) %>%
+mutate(resid = TotalKg - .pred)
+
+ggplot(ls_mod_output, aes(x = BodyweightKg, y = resid)) +
+geom_point(alpha=0.3) +
+geom_smooth() +
+geom_hline(yintercept = 0, color = "red") +
+theme_classic()
+
+ggplot(ls_mod_output, aes(x = Age, y = resid)) +
+geom_point(alpha=0.3) +
+geom_smooth() +
+geom_hline(yintercept = 0, color = "red") +
+theme_classic()
+```
+
+EVALUATING SPLINE MODEL:
+
+```{r}
+# Your code
+set.seed(2023)
+data_cv8 <- vfold_cv(openpowerlifting1_noNA, v = 8)
+lm_spec <-
+linear_reg() %>%
+set_engine(engine = 'lm') %>%
+set_mode('regression')
+# New Recipe (remove steps needed for LASSO, add splines)
+full_rec_spline <- recipe(TotalKg ~ Sex+Equipment+Age+BodyweightKg, data = openpowerlifting1_noNA) %>%
+step_normalize(all_numeric_predictors()) %>%
+step_dummy(all_nominal_predictors()) %>%
+step_ns(BodyweightKg,Age, deg_free = 3) # natural cubic spline (higher deg_free means more knots)
+# Workflow (Recipe + Model)
+ns_wf_tune <- workflow() %>%
+add_recipe(full_rec_spline) %>%
+add_model(lm_spec)
+# CV to Evaluate
+cv_output <- fit_resamples(
+ns_wf_tune, # workflow
+resamples = data_cv8, # cv folds
+metrics = metric_set(mae)
+)
+# Collect the metrics
+cv_output %>% collect_metrics()
+
+```
+
+We saw that throguh the process of LASSO, the predictor equipment straps is the least important predictor, as the coeff now is 0. We also know that Splines model performed the best with a MAE of 123kgs.The MAE suggests, on average, the model's prediction of the weight lifted by a powerlifter deviate from the actual values by approx 123.2 kgs.
+
+```{r}
+ns_mod <- fit(
+ns_wf_tune, 
+data = openpowerlifting1_noNA
+)
+
+#make plots of the residuals vs. the predictors to evaluate 
+
+spline_mod_output <- openpowerlifting1_noNA %>%
+bind_cols(predict(ns_mod, new_data = openpowerlifting1_noNA)) %>%
+mutate(resid = TotalKg - .pred)
+```
+
+```{r}
+ggplot(spline_mod_output, aes(x = BodyweightKg, y = resid)) +
+geom_point(alpha=0.3) +
+geom_smooth() +
+geom_hline(yintercept = 0, color = "red") +
+theme_classic()
+
+ggplot(spline_mod_output, aes(x = Age, y = resid)) +
+geom_point(alpha=0.3) +
+geom_smooth() +
+geom_hline(yintercept = 0, color = "red") +
+theme_classic()
+```
+
+-   We can see that the spline for predictors body weight and age helped the model fit.
+-   A good model should have residuals that are randomly distributed around zero, with no clear patterns or trends, and we can see after implmenting spline, the model fit because we see more points concentrated at 0.
+
+##CLASSIFICATION RESEARCH QUESTION: - How accurately can we predict equipment used or not of a powerlifter based on their weight and age?
+
+LOGISTIC REGRESSION:
+
+```{r}
+# Logistic Regression Model Spec
+logistic_spec <- logistic_reg() %>%
+set_engine('glm') %>%
+set_mode('classification')
+
+# Recipe
+logistic_rec <- recipe(equipment_bin ~ BodyweightKg + Age, data = openpowerlifting1_noNA)
+# Workflow (Recipe + Model)
+log_wf <- workflow() %>%
+add_recipe(logistic_rec) %>%
+add_model(logistic_spec)
+# Fit Model
+log_fit <- fit(log_wf, data = openpowerlifting1_noNA)
+```
+
+```{r}
+tidy(log_fit) 
+
+```
+
+-   The intercept value in the logistic regression model indicates the estimated log-odds of a powerlifter using equipment when all other predictor variables, including BodyweightKg, Age are zero. In this case, the intercept value is 0.785 with a standard error of 0.015, indicating that the log-odds of using equipment increase by 0.785 units for every one-unit increase in the predictor variables when they are held constant. The p-value for the intercept is less than 0.05, indicating that it is statistically significant and that the intercept term is useful in predicting the probability of a powerlifter using equipment.
+-   The coefficient estimate for age is 0.004, with a standard error of 0.00027 and a p-value of 1.08995e-47. This suggests that age is a significant predictor of whether a powerlifter uses equipment or not. Specifically, for each one-unit increase in age, the log odds of a powerlifter using equipment increases by 0.004 units, holding all other predictors constant.
+-   However, Bodyweight predictor is less likely to influence a powerlifter in wearing a equipment.
+
+```{r}
+tidy(log_fit)%>% select(estimate)%>% slice(-1)%>% exp()
+```
+
+-   the odds of the outcome for a one unit increase in BodyweightKg is 0.9940555 ,meaning that the odds of the outcome decrease by a factor of 0.9940555 for every one unit increase in BodyweightKg, holding all other predictors constant.
+-   the odds of the outcome for a one unit increase in Age is 1.0039833, meaning that the odds of the outcome increase by a factor of 1.0039833 for every one unit increase in Age, holding all other predictors constant
+
+```{r}
+predict(log_fit, new_data = data.frame(BodyweightKg = 1, Age = 1), type = "prob")
+
+```
+
+Soft Prediction: The probability that powerlifters based on age and bodyweight is 31.4% likely to wear a equipment.
+
+```{r}
+predict(log_fit, new_data = data.frame(BodyweightKg = 1, Age = 1), type = "class")
+```
+
+EVALUATE LOGISTIC:
+
+```{r}
+# Soft predictions
+logistic_output <- openpowerlifting1_noNA %>%
+bind_cols(predict(log_fit, new_data = openpowerlifting1_noNA, type = 'prob')) %>%
+select(equipment_bin, .pred_Raw, `.pred_Not Raw`)
+head(logistic_output)
+```
+
+```{r}
+logistic_output %>% ggplot(aes(x = equipment_bin, y = .pred_Raw)) +
+geom_boxplot()
+```
+
+-   The median of not raw is around 0.59, which means that, on average, lifters using non-raw equipment have a predicted probability of around 0.59 of using equipment. On the other hand, the median of raw is around 0.61, which means that lifters using raw equipment have a slightly higher predicted probability of around 0.61 of using equipment.
+
+-   A probability threshold of 57% seems to separate the middle halves of the probabilities by equipment wore and not wore.
+
+```{r}
+# Hard predictions (you pick threshold)
+library(yardstick)
+logistic_output <- logistic_output %>%
+  mutate(equipment_bin = factor(equipment_bin)) %>%
+mutate(.pred_class = make_two_class_pred(`.pred_Not Raw`, levels(equipment_bin), threshold = 1 - 0.57)) 
+# Confusion Matrix
+logistic_output %>%
+conf_mat(truth = equipment_bin, estimate = .pred_class)
+```
+
+```{r}
+# Define confusion matrix
+cm <- matrix(c(29708, 94159, 32212, 150778), nrow=2, byrow=TRUE, dimnames=list(Prediction=c("Not Raw", "Raw"), Truth=c("Not Raw", "Raw")))
+
+# Calculate accuracy
+acc <- sum(diag(cm))/sum(cm)
+cat("Accuracy: ", acc, "\n")
+
+# Calculate sensitivity
+sens <- cm[2,2]/sum(cm[2,])
+cat("Sensitivity: ", sens, "\n")
+
+# Calculate specificity
+spec <- cm[1,1]/sum(cm[1,])
+cat("Specificity: ", spec, "\n")
+
+```
+
+Accuracy: The model correctly classified 58.8% of the samples in the dataset. Sensitivity: Out of all the actual "Raw" samples, the model correctly identified 82.4% of them as "Raw". Specificity: Out of all the actual "Not Raw" samples, the model correctly identified only 23.9% of them as "Not Raw".
+
+```{r}
+logistic_roc <- logistic_output %>%
+roc_curve(equipment_bin, .pred_Raw, event_level = "second")
+autoplot(logistic_roc) + theme_classic()
+```
+
+```{r}
+logistic_output %>%
+roc_auc(equipment_bin, .pred_Raw, event_level = "second")
+```
+
+The AUC (Area Under the Curve) for the ROC (Receiver Operating Characteristic) curve is 0.5389549. This indicates that the logistic regression model has a low discriminative ability to distinguish between the positive and negative classes. A perfect classifier would have an AUC of 1, while a random classifier would have an AUC of 0.5.
+
+FINAL MODEL: DECISION TREES
+
+```{r}
+set.seed(123) # don't change this
+data_fold <- vfold_cv(openpowerlifting1_noNA, v = 10)
+
+ct_spec_tune <- decision_tree() %>%
+set_engine(engine = 'rpart') %>%
+set_args(cost_complexity = tune(),
+min_n = 2,
+tree_depth = NULL) %>%
+set_mode('classification')
+
+data_rec <- recipe(equipment_bin ~ BodyweightKg + Age, data = openpowerlifting1_noNA)
+#data_rec <- recipe(Equipment ~ BodyweightKg + Age, data = openpowerlifting1_noNA)
+data_wf_tune <- workflow() %>%
+add_model(ct_spec_tune) %>%
+add_recipe(data_rec)
+
+param_grid <- grid_regular(cost_complexity(range = c(-5, -1)), levels = 30)
+tune_res <- tune_grid(
+data_wf_tune,
+resamples = data_fold,
+grid = param_grid,
+)
+```
+
+```{r}
+autoplot(tune_res)+theme_classic()
+```
+
+```{r}
+#choose the cost_complexity value that gives the simplest tree (high or low cost_complexity?) within 1 SE of the max accuracy
+best_complexity <- select_by_one_std_err(tune_res, metric = 'accuracy', desc(cost_complexity))
+data_wf_final <- finalize_workflow(data_wf_tune, best_complexity)
+final_fit <- fit(data_wf_final, data = openpowerlifting1_noNA)
+tune_res %>%
+collect_metrics() %>%
+filter(cost_complexity == best_complexity$cost_complexity)
+```
+
+The mean accuracy is 0.685, which means that the model correctly predicted 68.5% of the equipment classes. The mean roc_auc value is 0.709, which indicates that the model is able to distinguish between the two classes with an area under the curve (AUC) of 0.7109. The std_err value represents the standard error of the mean, which is an estimate of the variation of the sampling distribution.
+
+```{r}
+final_fit%>%  extract_fit_engine() %>% rpart.plot()
+```
+
+```{r}
+predict(final_fit, new_data=openpowerlifting1_noNA, type="prob")
+```
+
+MAKE PREDICTIONS:
+
+```{r}
+# Pick out training case 2 to make a prediction
+test_case <- openpowerlifting1_noNA[2,]
+# Show only the needed predictors
+test_case %>% select(Age, BodyweightKg)
+```
+
+```{r}
+# Soft (probability) prediction
+predict(final_fit, new_data = test_case, type = "prob")
+```
+
+soft prediction for the test case indicates that the probability of the individual not using equipment is 0.107 and the probability of using equipment is 0.893.
+
+```{r}
+# Hard (class) prediction
+predict(final_fit, new_data = test_case, type = "class")
+```
+
+VARIABLE IMPORTANCE:
+
+```{r}
+final_fit %>%
+extract_fit_engine() %>%
+pluck('variable.importance')
+```
+
+In this case, we can see that BodyweightKg predictor is more important variable than Age, when considering predicint whether a powerlifter is wearing or not wearing an equiment.

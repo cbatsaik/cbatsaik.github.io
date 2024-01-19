@@ -42,18 +42,25 @@
     "text": "Skills\nProgramming & Technical Skills: R, RShiny, Python, SQL, Java, Excel, MS Office\nSoft Skills: Efficient and effective team player, attention to detail, problem solver, hard-working, flexible, willing to learn, self-initiator.\nLanguages: English (first language), Mongolian (native), Chinese (intermediate)."
   },
   {
+    "objectID": "projects/machine learning project/index.html#introduction",
+    "href": "projects/machine learning project/index.html#introduction",
+    "title": "Statistical Machine Learning Project",
+    "section": "Introduction",
+    "text": "Introduction\nIn construction."
+  },
+  {
     "objectID": "projects/opioid_project/index.html",
     "href": "projects/opioid_project/index.html",
     "title": "Analyzing the Opioid Epidemic",
     "section": "",
-    "text": "You can explore the Opioid Epidemic ShinyApp here You can explore the source code here"
+    "text": "You can explore the Opioid Epidemic ShinyApp (link will be added). You can explore the source code here"
   },
   {
     "objectID": "projects/opioid_project/index.html#introduction",
     "href": "projects/opioid_project/index.html#introduction",
     "title": "Analyzing the Opioid Epidemic",
     "section": "Introduction",
-    "text": "Introduction\nIn this project, my groupmates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns."
+    "text": "Introduction\nIn this project, my group mates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns."
   },
   {
     "objectID": "projects/opioid_project/index.html#objectives",
@@ -81,7 +88,14 @@
     "href": "projects.html",
     "title": "Charles Batsaikhan - Projects",
     "section": "",
-    "text": "Analyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Analyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Machine Learning Project\n\n\nExploring total weight lifted by powerlifters in a regressional and classification setting\n\n\n\nCharles Batsaikhan\n\n\nMay 10, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "tidytuesday.html",
+    "href": "tidytuesday.html",
+    "title": "tidytuesday",
+    "section": "",
+    "text": "In construction"
   },
   {
     "objectID": "index.html",

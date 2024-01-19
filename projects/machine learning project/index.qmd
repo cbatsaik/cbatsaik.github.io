@@ -1,0 +1,16 @@
+---
+title: "Statistical Machine Learning Project"
+author:
+  - name: Charles Batsaikhan
+date: 2023-05-10
+categories: [R, Machine Learning]
+description: "Exploring total weight lifted by powerlifters in a regressional and classification setting"
+image: ./images/powerlifting.png
+---
+
+
+<br>
+
+## Introduction
+
+In construction. 
