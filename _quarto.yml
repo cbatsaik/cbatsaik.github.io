@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Charles Batsaikhan"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: resume.qmd
+        text: Resume
+      - href: projects.qmd
+        text: Projects
+      - href: tidytuesday.qmd
+        text: TidyTuesday
+  page-footer: 
+    left: |
+      &copy; Charles Batsaikhan, 2023<br>
+      All content licensed under <i class='bi-badge-cc'></i>
+      [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+    right: |
+      Site built with <a href='https://quarto.org/'>Quarto</a>
+        
+
+
+# format:
+#   html:
+#     theme: zephyr
+#     css: styles.css
+#     toc: true
+format:
+  html:
+    theme: styles.scss
+    mainfont: 'Bellota Text'
+    toc: true
+    
+editor: visual
+

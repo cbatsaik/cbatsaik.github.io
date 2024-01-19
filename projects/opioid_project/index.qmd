@@ -1,0 +1,37 @@
+---
+title: "Analyzing the Opioid Epidemic"
+author:
+  - name: Charles Batsaikhan, Alayna Johnson, James Hernandez
+date: 2023-12-15
+categories: [Quarto, R, RShiny, API]
+description: "Exploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations."
+image: ./images/main.png
+---
+
+
+You can explore the Opioid Epidemic ShinyApp [here](http://127.0.0.1:3454/).
+You can explore the source code [here](./code/app copy.R).
+
+<br>
+
+## Introduction
+
+In this project, my groupmates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns.
+
+## Objectives
+
+-   **Data Exploration:** Dive into datasets related to opioid usage, overdose incidents, and associated factors.
+-   **Trend Analysis:** Identify temporal trends and geographical patterns to better comprehend the evolution of the epidemic.
+-   **Interactive Visualizations:** Utilize R and RShiny to create dynamic visualizations for enhanced data exploration.
+
+## Methodology
+
+I approach the analysis with a combination of statistical methods and data visualization tools. Leveraging the power of R and RShiny, I aim to provide an insightful perspective on the opioid epidemic.
+
+## Expected Outcomes
+
+Through this project, I anticipate shedding light on the opioid epidemic's dynamics, contributing valuable insights that may inform future interventions and policies.
+
+
+
+

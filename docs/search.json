@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "",
+    "text": "Address: 258 South Macalester Street, St. Paul, MN 55105\nPhone: (952) 923-9267\nEmail: cbatsaik@macalester.edu"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "Education",
+    "text": "Education\nMacalester College, St. Paul, MN\nBachelor of Arts, Data Science\nExpected Graduation: May 2025\nMajor GPA: 3.77, Cumulative GPA 3.55\nHonors: Dean’s List (Spring 2023)\nRelevant Coursework:\n\nStatistical Modeling\nStatistical Machine Learning\nIntermediate Data Science\nDatabase Management Systems\nComputational Linear Algebra"
+  },
+  {
+    "objectID": "resume.html#project-experience",
+    "href": "resume.html#project-experience",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "Project Experience",
+    "text": "Project Experience\nOpioid Epidemic - Intermediate Data Science\n\nLed a team in developing a Shiny web application using R to analyze and visualize the U.S. opioid epidemic.\nApplied R and Shiny for data manipulation, cleaning, and interactive visualization, showcasing demographic impacts.\nEmployed API web scraping techniques to gather diverse datasets, enhancing the depth and breadth of the analysis.\n\nPowerlifting Dataset - Statistical Machine Learning\n\nUsed R programming to answer how accurately machine learning algorithms identify the best models to predict kilograms lifted by competitors.\nUsed LASSO and Splines Models in a Regression setting, and Logistic Regression and Decision Trees in a Classification setting.\nBest models: LASSO in the Regression setting, and Logistic Regression in the Classification setting.\n\nDouble Down - Object Oriented Programming\n\nUsed Java programming to work in group settings and create a user interactive Blackjack card game."
+  },
+  {
+    "objectID": "resume.html#work-experience",
+    "href": "resume.html#work-experience",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "Work Experience",
+    "text": "Work Experience\nPreceptor for “Intro to Data Science” course, Macalester College\n\nTeacher’s assistant; graded students’ homework and quizzes efficiently and accurately.\nHelped teach many students with no prior R coding experience while holding office hours.\nTaught students the importance of data importing, wrangling, and visualizing using ggplot and dplyr package of R.\n\nCampus Center Building Manager, Macalester College\n\nManaged operations of the Campus Center and other main buildings on the campus.\nHelped organize campus center events being hosted by the college.\n\nSummer Intern - Accounting, Kokua Kalihi Valley-Health Center, Honolulu, HI\n\nEntered journal entries of company transactions on MIP Fund Accounting software.\nImproved skills in MS Office, specifically Excel Spreadsheets by running the company’s monthly expense summaries.\nCreated PowerPoint instructions on the usage of various office equipment."
+  },
+  {
+    "objectID": "resume.html#campus-activities",
+    "href": "resume.html#campus-activities",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "Campus Activities",
+    "text": "Campus Activities\nMacalester Men’s Swimming and Diving Team\n\nCommitted approximately 20 hours/week per season to practice, lifting, competing, and traveling for competitions.\nNominated Team “MVP” as a first year and second year.\nWon Silver and Bronze Medal in the Minnesota Intercollegiate Conference Championship.\nNine-time record holder in swimming for the history of Macalester College."
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Charles Batsaikhan - Resume",
+    "section": "Skills",
+    "text": "Skills\nProgramming & Technical Skills: R, RShiny, Python, SQL, Java, Excel, MS Office\nSoft Skills: Efficient and effective team player, attention to detail, problem solver, hard-working, flexible, willing to learn, self-initiator.\nLanguages: English (first language), Mongolian (native), Chinese (intermediate)."
+  },
+  {
+    "objectID": "projects/opioid_project/index.html",
+    "href": "projects/opioid_project/index.html",
+    "title": "Analyzing the Opioid Epidemic",
+    "section": "",
+    "text": "You can explore the Opioid Epidemic ShinyApp here. You can explore the source code here."
+  },
+  {
+    "objectID": "projects/opioid_project/index.html#introduction",
+    "href": "projects/opioid_project/index.html#introduction",
+    "title": "Analyzing the Opioid Epidemic",
+    "section": "Introduction",
+    "text": "Introduction\nIn this project, my groupmates and I delve into the critical issue of the opioid epidemic, employing data analysis techniques and interactive visualizations to understand its impact and identify potential patterns."
+  },
+  {
+    "objectID": "projects/opioid_project/index.html#objectives",
+    "href": "projects/opioid_project/index.html#objectives",
+    "title": "Analyzing the Opioid Epidemic",
+    "section": "Objectives",
+    "text": "Objectives\n\nData Exploration: Dive into datasets related to opioid usage, overdose incidents, and associated factors.\nTrend Analysis: Identify temporal trends and geographical patterns to better comprehend the evolution of the epidemic.\nInteractive Visualizations: Utilize R and RShiny to create dynamic visualizations for enhanced data exploration."
+  },
+  {
+    "objectID": "projects/opioid_project/index.html#methodology",
+    "href": "projects/opioid_project/index.html#methodology",
+    "title": "Analyzing the Opioid Epidemic",
+    "section": "Methodology",
+    "text": "Methodology\nI approach the analysis with a combination of statistical methods and data visualization tools. Leveraging the power of R and RShiny, I aim to provide an insightful perspective on the opioid epidemic."
+  },
+  {
+    "objectID": "projects/opioid_project/index.html#expected-outcomes",
+    "href": "projects/opioid_project/index.html#expected-outcomes",
+    "title": "Analyzing the Opioid Epidemic",
+    "section": "Expected Outcomes",
+    "text": "Expected Outcomes\nThrough this project, I anticipate shedding light on the opioid epidemic’s dynamics, contributing valuable insights that may inform future interventions and policies."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Charles Batsaikhan - Projects",
+    "section": "",
+    "text": "Analyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Charles Batsaikhan",
+    "section": "",
+    "text": "Gmail\n  \n  \n    \n     Github\n  \n  \n    \n     Phone\n  \n\n  \n  \n\n\nMacalester College | St. Paul, MN B.A in Data Science | Sept 2021 - May 2025 (Expected)\n\n\n\nHello! I’m Charles Batsaikhan, a third-year Data Science student at Macalester College. Originally from Honolulu, Hawaii, and raised in Ulaanbaatar, Mongolia. I enjoy TV time with friends, swimming, and watching mixed martial arts.\n\n\n\nI believe Data Scientists are crucial because they possess the ability to predict the outcomes of events using data. This aligns with my passion for creating a better society for everyone. My goal is to become a proficient data scientist, utilizing my skills to contribute to societal improvement by predicting outcomes through the technical expertise required in this field.\nAs an enthusiastic Data Science student, I have a strong foundation in statistical analysis, machine learning, data importing and wrangling, spatial and non-spatial visualization, and database management.\n\n\n\n\nMy Resume (PDF)\nMy Cover Letter (PDF)"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Charles Batsaikhan",
+    "section": "",
+    "text": "Macalester College | St. Paul, MN B.A in Data Science | Sept 2021 - May 2025 (Expected)"
+  },
+  {
+    "objectID": "index.html#personal-summary",
+    "href": "index.html#personal-summary",
+    "title": "Charles Batsaikhan",
+    "section": "",
+    "text": "Hello! I’m Charles Batsaikhan, a third-year Data Science student at Macalester College. Originally from Honolulu, Hawaii, and raised in Ulaanbaatar, Mongolia. I enjoy TV time with friends, swimming, and watching mixed martial arts."
+  },
+  {
+    "objectID": "index.html#why-data-science",
+    "href": "index.html#why-data-science",
+    "title": "Charles Batsaikhan",
+    "section": "",
+    "text": "I believe Data Scientists are crucial because they possess the ability to predict the outcomes of events using data. This aligns with my passion for creating a better society for everyone. My goal is to become a proficient data scientist, utilizing my skills to contribute to societal improvement by predicting outcomes through the technical expertise required in this field.\nAs an enthusiastic Data Science student, I have a strong foundation in statistical analysis, machine learning, data importing and wrangling, spatial and non-spatial visualization, and database management."
+  },
+  {
+    "objectID": "index.html#quick-navigation",
+    "href": "index.html#quick-navigation",
+    "title": "Charles Batsaikhan",
+    "section": "",
+    "text": "My Resume (PDF)\nMy Cover Letter (PDF)"
+  }
+]

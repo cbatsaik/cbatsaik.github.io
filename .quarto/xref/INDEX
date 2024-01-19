@@ -1,0 +1,17 @@
+{
+  "projects.qmd": {
+    "projects.html": "01e33859"
+  },
+  "resume.qmd": {
+    "resume.html": "9222b32f"
+  },
+  "projects/opioid_project/index.qmd": {
+    "index.html": "581d2e19"
+  },
+  "tidytuesday.qmd": {
+    "tidytuesday.html": "9b9faae0"
+  },
+  "index.qmd": {
+    "index.html": "f79b8acf"
+  }
+}

@@ -1,0 +1,38 @@
+---
+title: "Charles Batsaikhan"
+about: 
+  id: hero-heading
+  template: trestles
+  image: profile.png
+  links:
+    - icon: envelope
+      text: Gmail
+      href: mailto:cbatsaik@macalester.edu
+    - icon: github
+      text: Github
+      href: https://github.com/cbatsaik
+    - icon: phone
+      text: Phone
+      href: tel:+19529239267
+---
+
+::: {#hero-heading}
+## Education
+
+Macalester College \| St. Paul, MN B.A in Data Science \| Sept 2021 - May 2025 (Expected)
+
+## Personal Summary
+
+Hello! I'm Charles Batsaikhan, a third-year Data Science student at Macalester College. Originally from Honolulu, Hawaii, and raised in Ulaanbaatar, Mongolia. I enjoy TV time with friends, swimming, and watching mixed martial arts.
+
+## Why Data Science?
+
+I believe Data Scientists are crucial because they possess the ability to predict the outcomes of events using data. This aligns with my passion for creating a better society for everyone. My goal is to become a proficient data scientist, utilizing my skills to contribute to societal improvement by predicting outcomes through the technical expertise required in this field.
+
+As an enthusiastic Data Science student, I have a strong foundation in statistical analysis, machine learning, data importing and wrangling, spatial and non-spatial visualization, and database management.
+
+## Quick Navigation
+
+-   [My Resume (PDF)](./resume.pdf)
+-   [My Cover Letter (PDF)]()
+:::
