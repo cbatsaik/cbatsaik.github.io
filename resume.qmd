@@ -3,101 +3,95 @@ title: "Charles Batsaikhan - Resume"
 editor: visual
 ---
 
+**Address:** 258 South Macalester Street, St. Paul, MN 55105\
+**Phone:** (952) 923-9267\
+**Email:** [cbatsaik\@macalester.edu](mailto:cbatsaik@macalester.edu)
 
-**Address:** 258 South Macalester Street, St. Paul, MN 55105  
-**Phone:** (952) 923-9267  
-**Email:** [cbatsaik@macalester.edu](mailto:cbatsaik@macalester.edu)
+------------------------------------------------------------------------
 
----
+-   [Education](#education)
+-   [Project Experience](#project-experience)
+-   [Work Experience](#work-experience)
+-   [Campus Activities](#campus-activities)
+-   [Skills](#skills)
 
-- [Education](#education)
-- [Project Experience](#project-experience)
-- [Work Experience](#work-experience)
-- [Campus Activities](#campus-activities)
-- [Skills](#skills)
-
----
+------------------------------------------------------------------------
 
 ## Education {#education}
 
-**Macalester College, St. Paul, MN**  
+**Macalester College, St. Paul, MN**\
 Bachelor of Arts, Data Science
 
 Expected Graduation: May 2025
 
-**Major GPA**: 3.77, **Cumulative GPA** 3.55
-
-Honors: Dean’s List (Spring 2023)
+Honors: Dean's List (Spring 2023)
 
 **Relevant Coursework:**
 
-* Statistical Modeling
-* Statistical Machine Learning
-* Intermediate Data Science
-* Database Management Systems
-* Computational Linear Algebra
+-   Statistical Modeling
+-   Statistical Machine Learning
+-   Intermediate Data Science
+-   Database Management Systems
+-   Computational Linear Algebra
 
----
+------------------------------------------------------------------------
 
 ## Project Experience {#project-experience}
 
 **Opioid Epidemic - Intermediate Data Science**
 
-* Led a team in developing a Shiny web application using R to analyze and visualize the U.S. opioid epidemic.
-* Applied R and Shiny for data manipulation, cleaning, and interactive visualization, showcasing demographic impacts.
-* Employed API web scraping techniques to gather diverse datasets, enhancing the depth and breadth of the analysis.
+-   Led a team in developing a Shiny web application using R to analyze and visualize the U.S. opioid epidemic.
+-   Applied R and Shiny for data manipulation, cleaning, and interactive visualization, showcasing demographic impacts.
+-   Employed API web scraping techniques to gather diverse datasets, enhancing the depth and breadth of the analysis.
 
 **Powerlifting Dataset - Statistical Machine Learning**
 
-* Used R programming to answer how accurately machine learning algorithms identify the best models to predict kilograms lifted by competitors.
-* Used LASSO and Splines Models in a Regression setting, and Logistic Regression and Decision Trees in a Classification setting.
-* Best models: LASSO in the Regression setting, and Logistic Regression in the Classification setting.
+-   Used R programming to answer how accurately machine learning algorithms identify the best models to predict kilograms lifted by competitors.
+-   Used LASSO and Splines Models in a Regression setting, and Logistic Regression and Decision Trees in a Classification setting.
+-   Best models: LASSO in the Regression setting, and Logistic Regression in the Classification setting.
 
 **Double Down - Object Oriented Programming**
 
-* Used Java programming to work in group settings and create a user interactive Blackjack card game.
+-   Used Java programming to work in group settings and create a user interactive Blackjack card game.
 
----
+------------------------------------------------------------------------
 
 ## Work Experience {#work-experience}
 
-**Preceptor for “Intro to Data Science” course, Macalester College**
+**Preceptor for "Intro to Data Science" course, Macalester College**
 
-* Teacher’s assistant; graded students’ homework and quizzes efficiently and accurately.
-* Helped teach many students with no prior R coding experience while holding office hours.
-* Taught students the importance of data importing, wrangling, and visualizing using ggplot and dplyr package of R.
+-   Teacher's assistant; graded students' homework and quizzes efficiently and accurately.
+-   Helped teach many students with no prior R coding experience while holding office hours.
+-   Taught students the importance of data importing, wrangling, and visualizing using ggplot and dplyr package of R.
 
 **Campus Center Building Manager, Macalester College**
 
-* Managed operations of the Campus Center and other main buildings on the campus.
-* Helped organize campus center events being hosted by the college.
+-   Managed operations of the Campus Center and other main buildings on the campus.
+-   Helped organize campus center events being hosted by the college.
 
 **Summer Intern - Accounting, Kokua Kalihi Valley-Health Center, Honolulu, HI**
 
-* Entered journal entries of company transactions on MIP Fund Accounting software.
-* Improved skills in MS Office, specifically Excel Spreadsheets by running the company’s monthly expense summaries.
-* Created PowerPoint instructions on the usage of various office equipment.
+-   Entered journal entries of company transactions on MIP Fund Accounting software.
+-   Improved skills in MS Office, specifically Excel Spreadsheets by running the company's monthly expense summaries.
+-   Created PowerPoint instructions on the usage of various office equipment.
 
----
+------------------------------------------------------------------------
 
 ## Campus Activities {#campus-activities}
 
-**Macalester Men’s Swimming and Diving Team**
+**Macalester Men's Swimming and Diving Team**
 
-* Committed approximately 20 hours/week per season to practice, lifting, competing, and traveling for competitions.
-* Nominated Team “MVP” as a first year and second year.
-* Won Silver and Bronze Medal in the Minnesota Intercollegiate Conference Championship.
-* Nine-time record holder in swimming for the history of Macalester College.
+-   Committed approximately 20 hours/week per season to practice, lifting, competing, and traveling for competitions.
+-   Nominated Team "MVP" as a first year and second year.
+-   Won Silver and Bronze Medal in the Minnesota Intercollegiate Conference Championship.
+-   Nine-time record holder in swimming for the history of Macalester College.
 
----
+------------------------------------------------------------------------
 
 ## Skills {#skills}
 
-**Programming & Technical Skills:** 
-R, RShiny, Python, SQL, Java, Excel, MS Office
+**Programming & Technical Skills:** R, RShiny, Python, SQL, Java, Excel, MS Office
 
-**Soft Skills:** 
-Efficient and effective team player, attention to detail, problem solver, hard-working, flexible, willing to learn, self-initiator.
+**Soft Skills:** Efficient and effective team player, attention to detail, problem solver, hard-working, flexible, willing to learn, self-initiator.
 
-**Languages:** 
-English (first language), Mongolian (native), Chinese (intermediate).
+**Languages:** English (first language), Mongolian (native), Chinese (intermediate).
