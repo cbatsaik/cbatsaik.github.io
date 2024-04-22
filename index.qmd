@@ -19,7 +19,7 @@ about:
 ::: {#hero-heading}
 ## Education
 
-Macalester College \| St. Paul, MN B.A in Data Science \| Sept 2021 - May 2025 (Expected)
+Macalester College \| St. Paul, MN B.A in Data Science \ minor in Math| Sept 2021 - May 2025 (Expected)
 
 ## Personal Summary
 
