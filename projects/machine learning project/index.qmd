@@ -12,5 +12,5 @@ image: ./images/powerlifting.png
 <br>
 
 ## Introduction
-
+I used regressional and classification machine learning techniques
 In construction. 
