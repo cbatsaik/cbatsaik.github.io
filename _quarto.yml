@@ -24,16 +24,16 @@ website:
         
 
 
-# format:
-#   html:
-#     theme: zephyr
-#     css: styles.css
-#     toc: true
+
 format:
   html:
-    theme: styles.scss
-    mainfont: 'Bellota Text'
+    theme: zephyr
+    css: styles.css
     toc: true
+    includes:
+      after_body: footer-scripts.html
+
+
     
 editor: visual
 

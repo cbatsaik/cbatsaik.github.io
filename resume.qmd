@@ -5,7 +5,7 @@ editor: visual
 
 **Address:** 258 South Macalester Street, St. Paul, MN 55105\
 **Phone:** (952) 923-9267\
-**Email:** [cbatsaik\@macalester.edu](mailto:cbatsaik@macalester.edu)
+**Email:** [cbatsaik@macalester.edu](mailto:cbatsaik@macalester.edu)
 
 ------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ editor: visual
 
 ------------------------------------------------------------------------
 
-## Education {#education}
+## Education {#education .fade-in-on-scroll}
 
 **Macalester College, St. Paul, MN**\
 Bachelor of Arts, Data Science
@@ -36,7 +36,7 @@ Honors: Dean's List (Spring 2023)
 
 ------------------------------------------------------------------------
 
-## Project Experience {#project-experience}
+## Project Experience {#project-experience .fade-in-on-scroll}
 
 **Opioid Epidemic - Intermediate Data Science**
 
@@ -56,7 +56,7 @@ Honors: Dean's List (Spring 2023)
 
 ------------------------------------------------------------------------
 
-## Work Experience {#work-experience}
+## Work Experience {#work-experience .fade-in-on-scroll}
 
 **Preceptor for "Intro to Data Science" course, Macalester College**
 
@@ -77,7 +77,7 @@ Honors: Dean's List (Spring 2023)
 
 ------------------------------------------------------------------------
 
-## Campus Activities {#campus-activities}
+## Campus Activities {#campus-activities .fade-in-on-scroll}
 
 **Macalester Men's Swimming and Diving Team**
 
@@ -88,7 +88,7 @@ Honors: Dean's List (Spring 2023)
 
 ------------------------------------------------------------------------
 
-## Skills {#skills}
+## Skills {#skills .fade-in-on-scroll}
 
 **Programming & Technical Skills:** R, RShiny, Python, SQL, Java, Excel, MS Office
 

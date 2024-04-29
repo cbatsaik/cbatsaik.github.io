@@ -14,16 +14,25 @@ about:
     - icon: phone
       text: Phone
       href: tel:+19529239267
+
+output:
+  html_document:
+    includes:
+      in_header: header.html
+    css: styles.css
+
 ---
 
 ::: {#hero-heading}
 ## Education
 
-Macalester College \| St. Paul, MN B.A in Data Science and minor in Math \| Sept 2021 - May 2025 (Expected)
+Macalester College | St. Paul, MN B.A in Data Science and minor in Math | Sept 2021 - May 2025 (Expected)
+{.fade-in-on-scroll}
 
 ## Personal Summary
 
 Hello! I'm Charles Batsaikhan, a third-year Data Science student at Macalester College. Originally from Honolulu, Hawaii, and raised in Ulaanbaatar, Mongolia. I enjoy TV time with friends, swimming, and watching mixed martial arts.
+{.fade-in-on-scroll}
 
 ## Why Data Science?
 
