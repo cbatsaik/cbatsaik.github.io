@@ -1,52 +1,24 @@
 [
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Charles Batsaikhan - Resume",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Munkhbat Charles Batsaikhan",
     "section": "",
-    "text": "Address: 258 South Macalester Street, St. Paul, MN 55105\nPhone: (952) 923-9267\nEmail: cbatsaik@macalester.edu"
+    "text": "I am a senior student at Macalester College studying Statistics with a Mathematics minor with an expected graduation date of May 2025."
   },
   {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
-    "title": "Charles Batsaikhan - Resume",
-    "section": "Education",
-    "text": "Education\nMacalester College, St. Paul, MN\nBachelor of Arts, Data Science\nExpected Graduation: May 2025\nHonors: Dean’s List (Spring 2023)\nRelevant Coursework:\n\nStatistical Modeling\nStatistical Machine Learning\nIntermediate Data Science\nDatabase Management Systems\nComputational Linear Algebra"
-  },
-  {
-    "objectID": "resume.html#project-experience",
-    "href": "resume.html#project-experience",
-    "title": "Charles Batsaikhan - Resume",
-    "section": "Project Experience",
-    "text": "Project Experience\nOpioid Epidemic - Intermediate Data Science\n\nLed a team in developing a Shiny web application using R to analyze and visualize the U.S. opioid epidemic.\nApplied R and Shiny for data manipulation, cleaning, and interactive visualization, showcasing demographic impacts.\nEmployed API web scraping techniques to gather diverse datasets, enhancing the depth and breadth of the analysis.\n\nPowerlifting Dataset - Statistical Machine Learning\n\nUsed R programming to answer how accurately machine learning algorithms identify the best models to predict kilograms lifted by competitors.\nUsed LASSO and Splines Models in a Regression setting, and Logistic Regression and Decision Trees in a Classification setting.\nBest models: LASSO in the Regression setting, and Logistic Regression in the Classification setting.\n\nDouble Down - Object Oriented Programming\n\nUsed Java programming to work in group settings and create a user interactive Blackjack card game."
-  },
-  {
-    "objectID": "resume.html#work-experience",
-    "href": "resume.html#work-experience",
-    "title": "Charles Batsaikhan - Resume",
-    "section": "Work Experience",
-    "text": "Work Experience\nPreceptor for “Intro to Data Science” course, Macalester College\n\nTeacher’s assistant; graded students’ homework and quizzes efficiently and accurately.\nHelped teach many students with no prior R coding experience while holding office hours.\nTaught students the importance of data importing, wrangling, and visualizing using ggplot and dplyr package of R.\n\nCampus Center Building Manager, Macalester College\n\nManaged operations of the Campus Center and other main buildings on the campus.\nHelped organize campus center events being hosted by the college.\n\nSummer Intern - Accounting, Kokua Kalihi Valley-Health Center, Honolulu, HI\n\nEntered journal entries of company transactions on MIP Fund Accounting software.\nImproved skills in MS Office, specifically Excel Spreadsheets by running the company’s monthly expense summaries.\nCreated PowerPoint instructions on the usage of various office equipment."
-  },
-  {
-    "objectID": "resume.html#campus-activities",
-    "href": "resume.html#campus-activities",
-    "title": "Charles Batsaikhan - Resume",
-    "section": "Campus Activities",
-    "text": "Campus Activities\nMacalester Men’s Swimming and Diving Team\n\nCommitted approximately 20 hours/week per season to practice, lifting, competing, and traveling for competitions.\nNominated Team “MVP” as a first year and second year.\nWon Silver and Bronze Medal in the Minnesota Intercollegiate Conference Championship.\nNine-time record holder in swimming for the history of Macalester College."
-  },
-  {
-    "objectID": "resume.html#skills",
-    "href": "resume.html#skills",
-    "title": "Charles Batsaikhan - Resume",
-    "section": "Skills",
-    "text": "Skills\nProgramming & Technical Skills: R, RShiny, Python, SQL, Java, Excel, MS Office\nSoft Skills: Efficient and effective team player, attention to detail, problem solver, hard-working, flexible, willing to learn, self-initiator.\nLanguages: English (first language), Mongolian (native), Chinese (intermediate)."
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Charles Batsaikhan - Projects",
+    "section": "",
+    "text": "Analyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Machine Learning Project\n\n\nExploring total weight lifted by powerlifters in a regressional and classification setting\n\n\n\nCharles Batsaikhan\n\n\nMay 10, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/machine learning project/index.html#introduction",
     "href": "projects/machine learning project/index.html#introduction",
     "title": "Statistical Machine Learning Project",
     "section": "Introduction",
-    "text": "Introduction\nIn construction."
+    "text": "Introduction\nI used regressional and classification machine learning techniques In construction."
   },
   {
     "objectID": "projects/opioid_project/index.html",
@@ -84,52 +56,10 @@
     "text": "Expected Outcomes\nThrough this project, I anticipate shedding light on the opioid epidemic’s dynamics, contributing valuable insights that may inform future interventions and policies."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Charles Batsaikhan - Projects",
-    "section": "",
-    "text": "/* Your gallery CSS goes here */\n.wrapper{\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\n.items{\n    display: flex;\n    gap: 0.4rem;\n    perspective: calc(1vw + 1vh * 35);\n}\n.item{\n    width: calc(1vw + 1vh * 3);\n    height: calc(1vw + 1vh * 12);\n    background-color: #222;\n    background-size: cover;\n    background-position: center;\n    cursor: pointer;\n    filter: grayscale(1) brightness(.5);\n    transition: transform 1.25s cubic-bezier(.1, .7, 0, 1), filter 3s cubic-bezier(.1, .7, 0, 1), width 1.25s cubic-bezier(.1, .7, 0, 1);\n    will-change: transform, filter, rotateY, width;\n}\n.item:hover{\n    filter: inherit;\n    transform: translateZ(calc(1vw + 1vh * 10));\n}\n/* Additional CSS for hover effects */\n&lt;!-- HTML for your gallery --&gt;\n&lt;div class=\"wrapper\"&gt;\n    &lt;div class=\"items\"&gt;\n        &lt;div class=\"item\" tabindex=\"0\" style=\"background-image: url('your-image-url.jpg')\"&gt;&lt;/div&gt;\n        &lt;!-- More items --&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Machine Learning Project\n\n\nExploring total weight lifted by powerlifters in a regressional and classification setting\n\n\n\nCharles Batsaikhan\n\n\nMay 10, 2023\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "tidytuesday.html",
     "href": "tidytuesday.html",
     "title": "tidytuesday",
     "section": "",
     "text": "In construction"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Munkhbat Charles Batsaikhan",
-    "section": "",
-    "text": "I am a senior student at Macalester College studying Statistics with a Mathematics minor with an expected graduation date of May 2025."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Munkhbat Charles Batsaikhan",
-    "section": "",
-    "text": "Macalester College | St. Paul, MN B.A in Statistics and minor in Math | Sept 2021 - May 2025 (Expected)"
-  },
-  {
-    "objectID": "index.html#personal-summary",
-    "href": "index.html#personal-summary",
-    "title": "Munkhbat Charles Batsaikhan",
-    "section": "",
-    "text": "Hello! I’m Charles Batsaikhan, a third-year Data Science student at Macalester College. Originally from Honolulu, Hawaii, and raised in Ulaanbaatar, Mongolia. I enjoy TV time with friends, swimming, and watching mixed martial arts."
-  },
-  {
-    "objectID": "index.html#why-data-science",
-    "href": "index.html#why-data-science",
-    "title": "Munkhbat Charles Batsaikhan",
-    "section": "",
-    "text": "I believe Data Scientists are crucial because they possess the ability to predict the outcomes of events using data. This aligns with my passion for creating a better society for everyone. My goal is to become a proficient data scientist, utilizing my skills to contribute to societal improvement by predicting outcomes through the technical expertise required in this field.\nAs an enthusiastic Data Science student, I have a strong foundation in statistical analysis, machine learning, data importing and wrangling, spatial and non-spatial visualization, and database management. My technical skills include coding in R, Python, SQL, and Java."
-  },
-  {
-    "objectID": "index.html#quick-navigation",
-    "href": "index.html#quick-navigation",
-    "title": "Munkhbat Charles Batsaikhan",
-    "section": "",
-    "text": "My Resume (PDF)"
   }
 ]

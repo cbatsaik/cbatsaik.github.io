@@ -19,17 +19,18 @@ website:
       [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
     right: |
       Site built with <a href='https://quarto.org/'>Quarto</a>
-        
-
 
 
 format:
   html:
-    theme: zephyr
+    theme: 
+      light: minty
+      dark: solar
     css: styles.css
-    toc: true
-    includes:
-      after_body: footer-scripts.html
+
+ 
+
+
 
 
     

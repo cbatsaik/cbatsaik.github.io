@@ -12,7 +12,7 @@ about:
     - text: Email
       href: mailto:cbatsaik@macalester.edu
     - text: "CV"
-      href: CV.pdf
+      href: /cbatsaik.github.io/CV.pdf
 ---
   
 
