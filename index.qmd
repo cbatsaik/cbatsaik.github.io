@@ -18,6 +18,6 @@ about:
 
 ::: {#hero-heading}
 
-I am a senior student at Macalester College studying Statistics with a Mathematics minor with an expected graduation date of May 2025.
+I am fresh out of college majoring in Statistics and minor in Mathematics.
 
 :::
