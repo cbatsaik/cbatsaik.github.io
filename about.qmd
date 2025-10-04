@@ -1,0 +1,93 @@
+---
+title: "Munkhbat Charles Batsaikhan"
+image: /images/profile.png
+image-alt: "Munkhbat in Manhattan"
+
+about: 
+  template: trestles
+  image-shape: rounded
+  image-width: 25em
+  id: hero-headding
+  links:
+    - icon: linkedin
+      aria-label: "LinkedIn"
+      href: https://www.linkedin.com/in/charles-batsaikhann
+    - icon: telephone   
+      aria-label: "Phone"
+      href: "tel:+19529239267"
+    - icon: envelope
+      aria-label: "Email"
+      href: mailto:cbatsaik@macalester.edu
+    - icon: github
+      aria-label: "GitHub"
+      href: https://github.com/cbatsaik
+
+format:
+    html: 
+        page-layout: full
+---
+
+::: {#hero-heading}
+Thanks for stopping by!
+
+I’m a Data Scientist Intern at <a href="https://www.metrotransit.org/" target="_blank" rel="noopener">Metro Transit (Metropolitan Council)</a>.  
+My interests include **causal inference**, **geospatial analysis**, and **transit analytics**. I like building clean, reproducible pipelines in R/Python and turning them into useful visualizations and apps.
+
+Want the longer story? Check out my [projects](projects.qmd) and [visualizations](visuals.qmd)—or grab my [resume](images/batsaikhan_resume%20copy.pdf).
+:::
+
+
+## About me
+
+::: {.grid}
+
+::: {.g-col-6}
+**Stats major with a focus on data for public good.**
+
+I work mostly in **R** (tidyverse, sf, Shiny) and **SQL**, with growing **Python** usage. I care about explainability, data ethics, and shipping tools that real people actually use. You’ll often find me iterating in Quarto and Shiny.
+
+<ul class="fa-ul">
+  <li><span class="fa-li"><i class="fa-solid fa-bus"></i></span>Transit analytics & GTFS/RT data pipelines</li>
+  <li><span class="fa-li"><i class="fa-solid fa-tree"></i></span>Urban climate & environmental equity (LST, tree canopy, SVI)</li>
+  <li><span class="fa-li"><i class="fa-solid fa-diagram-project"></i></span>Causal graphs, matching, and sensitivity analysis</li>
+</ul>
+:::
+
+::: {.g-col-6}
+Before Metro Transit, I researched environmental inequality in Minneapolis, combining historical housing data with modern climate and health indicators. I enjoy mapping, teaching stats concepts, and building dashboards that make complex analyses easy to explore.
+
+<ul class="fa-ul">
+  <li><span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span>BA in Statistics (Math minor) — Macalester College</li>
+  <li><span class="fa-li"><i class="fa-solid fa-person-chalkboard"></i></span>Teaching Assistant: Probability & Data Science</li>
+  <li><span class="fa-li"><i class="fa-solid fa-trophy"></i></span>Captain, Men’s Swimming & Diving (leadership & teamwork)</li>
+</ul>
+:::
+
+:::
+<!-- end grid -->
+
+## Lately ...
+
+:::: {.grid}
+
+::: {.g-col-3}
+#### Projects
+See highlights on the [Projects page →](projects.qmd){.about-links .subtitle}
+:::
+
+::: {.g-col-3}
+#### Visualizations
+Explore maps and dashboards on the [Visualizations page →](visuals.qmd){.about-links .subtitle}
+:::
+
+::: {.g-col-3}
+#### Resume
+Grab the PDF [here →](CV.pdf){.about-links .subtitle}
+:::
+
+::: {.g-col-3}
+#### Contact
+Email me at [cbatsaik@macalester.edu](mailto:cbatsaik@macalester.edu) → 
+:::
+
+::::
