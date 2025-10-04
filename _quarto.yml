@@ -1,17 +1,20 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: docs # keeps the file if i am deploying via /docs; change if using actions
 
 website:
-  title: "Charles Batsaikhan"
+  title: "Charles Batsaikhan"  # shows top-left as my name 
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
+    left: []
+    right:
+      - href: about.qmd
+        text: About 
+      - href: resume.qmd
+        text: Resume
       - href: projects.qmd
         text: Projects
-      - href: tidytuesday.qmd
-        text: TidyTuesday
+      - href: visuals.qmd
+        text: Visualizations
   page-footer: 
     left: |
       &copy; Charles Batsaikhan, 2023<br>
@@ -23,10 +26,11 @@ website:
 
 format:
   html:
-    theme: 
-      light: minty
-      dark: solar
+    theme: flatly
+    toc: false
     css: styles.css
+    smooth-scroll: true
+    include-after-body: []
 
  
 
@@ -34,5 +38,5 @@ format:
 
 
     
-editor: visual
+
 

@@ -1,0 +1,50 @@
+---
+title: "Munkhbat Charles Batsaikhan"
+pagetitle: "Munkhbat Charles Batsaikhan"
+subtitle: "Data Scientist Intern at Metro Transit <a href='https://www.metrotransit.org/' target='_blank' rel='noopener'><img src='images/mt_logo.png' alt='Metro Transit logo' class='mt-logo'></a>"
+
+
+about:
+  template: solana
+  image-width: 28em
+  id: hero-heading
+  links:
+    - icon: linkedin
+      aria-label: "LinkedIn"
+      href: https://www.linkedin.com/in/charles-batsaikhan
+    - icon: telephone   # or: phone
+      aria-label: "Phone"
+      href: "tel:+19529239267"
+    - icon: envelope
+      aria-label: "Email"
+      href: mailto:cbatsaik@macalester.edu
+    - icon: github
+      aria-label: "GitHub"
+      href: https://github.com/cbatsaik
+
+page-layout: full
+
+execute:
+  freeze: false
+  echo: false
+  warning: false
+
+header-includes: |
+  <style>
+    .mt-logo{
+      height: 22px;           /* tweak size if needed */
+      vertical-align: -4px;   /* align with subtitle baseline */
+      margin-left: 6px;
+    }
+  </style>
+---
+
+<br><br>
+
+::: {#hero-heading}
+
+I’m a data scientist and Statistics major at Macalester (’25). Right now I’m a Data Scientist Intern with Metro Transit’s Data & Business group, where I handle customer-facing issues and work with planners, field operations, and other stakeholders to turn data into useful answers. I build reproducible pipelines, sanity checks, and interactive dashboards that help track stop and route performance and the rider experience. I use R, SQL, Python (with Shiny, Quarto), and I like translating what stakeholders need into clear metrics and actions. I care about careful methods and practical results—especially when they make public services run better.
+
+[LEARN MORE ABOUT ME →](about.qmd){.about-links .subtitle}
+
+:::

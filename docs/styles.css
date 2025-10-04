@@ -1,0 +1,102 @@
+/* --- Palette & base --- */
+:root{
+  --cream:#fff8ed;
+  --ink:#10212b;
+  --muted:#546371;
+  --accent:#c65d2e;     /* warm accent for links/buttons */
+  --accent-2:#135d8a;   /* deep blue brand tone */
+  --border:#e8ded0;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* Navbar look (brand left, menu right) */
+.navbar { background: var(--cream) !important; border-bottom: 1px solid var(--border); }
+.navbar .navbar-brand, .navbar a { color: var(--ink) !important; font-weight: 600; }
+
+/* --- Hero layout --- */
+.hero-wrap{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 36px;
+  align-items: center;
+  padding: 48px 12px 32px;
+  min-height: 46vh;
+}
+
+/* Big name with subtle underline “badge” like Ella vibe */
+.brand-name{
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.05;
+  display: inline-block;
+  background:
+    linear-gradient(transparent 70%, rgba(198,93,46,.18) 0);
+}
+
+.tagline{
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Icon buttons row */
+.icon-links{
+  margin: 16px 0 8px;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.icon-btn{
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.icon-btn .ico{
+  display:inline-block; width: 1.2em; text-align:center;
+  color: var(--accent-2);
+}
+.icon-btn:hover{ border-color:#e0d2bf; transform: translateY(-1px); }
+
+/* Blurb paragraph */
+.intro{
+  margin-top: 10px;
+  max-width: 60ch;
+  color: var(--ink);
+}
+
+/* Learn more CTA */
+.learn-more{
+  display:inline-block;
+  margin-top: 12px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(198,93,46,.35);
+  padding-bottom: 2px;
+}
+.learn-more:hover{ color:#a94f27; }
+
+/* Right image (circular with sunburst-ish border feel) */
+.hero-right img{
+  width: 260px; max-width: 100%;
+  border-radius: 50%;
+  border: 10px solid #f7eee2;
+  box-shadow: 0 0 0 2px var(--border), 0 10px 30px rgba(0,0,0,.08);
+  display:block; margin:auto;
+}
+
+/* Responsive stack */
+@media (max-width: 900px){
+  .hero-wrap{ grid-template-columns: 1fr; text-align: center; }
+  .hero-right{ order:-1; }
+  .intro{ margin-left:auto; margin-right:auto; }
+}

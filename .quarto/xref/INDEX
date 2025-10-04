@@ -16,5 +16,11 @@
   },
   "projects/machine learning project/index.qmd": {
     "index.html": "4d07e673"
+  },
+  "visuals.qmd": {
+    "visuals.html": "bb150a3c"
+  },
+  "about.qmd": {
+    "about.html": "e7d095de"
   }
 }
