@@ -1,5 +1,14 @@
 ---
 title: "Resume"
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-**in constructin right meow**
+# Munkhbat Charles Batsaikhan
+
+[Download my resume](images/batsaikhan_resume%20copy.pdf)
+
+<!-- Inline viewer -->
+<iframe src="images/batsaikhan_resume%20copy.pdf#view=FitH" width="100%" height="900" style="border:0;"></iframe>
