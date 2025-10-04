@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Munkhbat Charles Batsaikhan",
     "section": "",
-    "text": "I am a senior student at Macalester College studying Statistics with a Mathematics minor with an expected graduation date of May 2025."
+    "text": "I’m a data scientist and Statistics major at Macalester (’25). Right now I’m a Data Scientist Intern with Metro Transit’s Data & Business group, where I handle customer-facing issues and work with planners, field operations, and other stakeholders to turn data into useful answers. I build reproducible pipelines, sanity checks, and interactive dashboards that help track stop and route performance and the rider experience. I use R, SQL, Python (with Shiny, Quarto), and I like translating what stakeholders need into clear metrics and actions. I care about careful methods and practical results—especially when they make public services run better.\nLEARN MORE ABOUT ME →"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Charles Batsaikhan - Projects",
     "section": "",
-    "text": "Analyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Machine Learning Project\n\n\nExploring total weight lifted by powerlifters in a regressional and classification setting\n\n\n\nCharles Batsaikhan\n\n\nMay 10, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "in construction…..\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Opioid Epidemic\n\n\nExploring the impact and trends of the opioid epidemic using data analysis and interactive visualizations.\n\n\n\nCharles Batsaikhan, Alayna Johnson, James Hernandez\n\n\nDec 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Machine Learning Project\n\n\nExploring total weight lifted by powerlifters in a regressional and classification setting\n\n\n\nCharles Batsaikhan\n\n\nMay 10, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/machine learning project/index.html#introduction",
@@ -61,5 +61,47 @@
     "title": "tidytuesday",
     "section": "",
     "text": "In construction"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Munkhbat Charles Batsaikhan",
+    "section": "",
+    "text": "Thanks for stopping by!\nI’m a Data Scientist Intern at Metro Transit (Metropolitan Council).\nMy interests include causal inference, geospatial analysis, and transit analytics. I like building clean, reproducible pipelines in R/Python and turning them into useful visualizations and apps.\nWant the longer story? Check out my projects and visualizations—or grab my resume."
+  },
+  {
+    "objectID": "visuals.html",
+    "href": "visuals.html",
+    "title": "tidytuesday",
+    "section": "",
+    "text": "In construction"
+  },
+  {
+    "objectID": "index.html#highlights",
+    "href": "index.html#highlights",
+    "title": "Home",
+    "section": "Highlights",
+    "text": "Highlights\n\n\n\nEnvironmental Inequality in Minneapolis\n\n&lt;p&gt;Racial covenants × LST × SVI × air emissions. Matching + spatial autocorrelation.&lt;/p&gt;\n&lt;span class=\"pill\"&gt;Causal Inference&lt;/span&gt;\n\n\n\nTier-2 Bus Routes Map\n\n&lt;p&gt;GTFS/RT pipeline + interactive map for Metro Transit.&lt;/p&gt;\n&lt;span class=\"pill\"&gt;Transit Analytics&lt;/span&gt;\n\n\n\nOpioid Epidemic Shiny App\n\n&lt;p&gt;API ingestion, cleaning, and visualization with R/Shiny.&lt;/p&gt;\n&lt;span class=\"pill\"&gt;R/Shiny&lt;/span&gt;"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "in constructin right meow"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "Munkhbat Charles Batsaikhan",
+    "section": "About me",
+    "text": "About me\n\n\nStats major with a focus on data for public good.\nI work mostly in R (tidyverse, sf, Shiny) and SQL, with growing Python usage. I care about explainability, data ethics, and shipping tools that real people actually use. You’ll often find me iterating in Quarto and Shiny.\n\n\nTransit analytics & GTFS/RT data pipelines\n\n\nUrban climate & environmental equity (LST, tree canopy, SVI)\n\n\nCausal graphs, matching, and sensitivity analysis\n\n\n\n\nBefore Metro Transit, I researched environmental inequality in Minneapolis, combining historical housing data with modern climate and health indicators. I enjoy mapping, teaching stats concepts, and building dashboards that make complex analyses easy to explore.\n\n\nBA in Statistics (Math minor) — Macalester College\n\n\nTeaching Assistant: Probability & Data Science\n\n\nCaptain, Men’s Swimming & Diving (leadership & teamwork)"
+  },
+  {
+    "objectID": "about.html#lately",
+    "href": "about.html#lately",
+    "title": "Munkhbat Charles Batsaikhan",
+    "section": "Lately …",
+    "text": "Lately …\n\n\nProjects\nSee highlights on the Projects page →\n\n\nVisualizations\nExplore maps and dashboards on the Visualizations page →\n\n\nResume\nGrab the PDF here →\n\n\nContact\nEmail me at cbatsaik@macalester.edu →"
   }
 ]
